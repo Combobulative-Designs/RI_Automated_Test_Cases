@@ -8,14 +8,14 @@ Given('la url es {word}', (url) => {
 When('ingreso al sistema con usuario {word} y contraseña {word}', (validezUsuario, validezPass) => {
     if (validezUsuario === "valido") {
         if (validezPass === "valida") {
-            cy.get('input[name=username][id=id_username]').type("qatesting")
+            cy.get('input[name=username][id=id_username]').type("admin")
             cy.get('input[name=password][id=id_password]').type("administrador")
         } else {
-            cy.get('input[name=username][id=id_username]').type("qatesting")
+            cy.get('input[name=username][id=id_username]').type("admin")
             cy.get('input[name=password][id=id_password]').type("fakepass")
         }
     } else {
-        cy.get('input[name=username][id=id_username]').type("qatesting")
+        cy.get('input[name=username][id=id_username]').type("fakeuser")
         cy.get('input[name=password][id=id_password]').type("fakepass")
     }
     cy.get('input[type=submit][value="Iniciar sesión"]').click()
